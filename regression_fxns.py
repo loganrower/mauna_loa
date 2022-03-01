@@ -32,7 +32,7 @@ def get_regression_parameters(array1, array2):
 
     regression_array = np.empty(2)
     slope = calc_corrcoef_from_standardized_input(array1, array2)*(np.std(array2)/np.std(array1))
-    intercept = np.mean(array2)/(slope * np.mean(array1))
+    intercept = np.mean(array2) - (slope * np.mean(array1))
     regression_array[0] = slope
     regression_array[1] = intercept
     return regression_array
