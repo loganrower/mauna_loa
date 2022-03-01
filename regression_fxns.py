@@ -10,6 +10,9 @@ def make_standard_units(input_array):
     '''Converts input_array to standard_units, where data has mean 0 and standard deviation of 1
         INPUT: data array
         OUTPUT: array in standard units'''
+    mean_subtracted_array = input_array - np.mean(input_array)
+    normalized_array = mean_subtracted_array/np.std(input_array)
+    return normalized_array
 
     
 def calc_corrcoef_from_standardized_input(array1,array2):
